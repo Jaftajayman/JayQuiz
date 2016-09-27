@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.ekasilab.jayquiz.MainActivity"
+    android:background="#ABEBC6">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/jay" />
+
+
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical"
+    android:layout_marginTop="90dp"
+        android:padding="10dp"
+
+    >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:text="Choose the question by clicking the button"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#000000"
+            android:layout_marginBottom="20dp"/>
+
+    <Button
+
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="html questions"
+        android:layout_marginLeft="90dp"
+       android:layout_marginBottom="10dp"
+        android:id="@+id/startHtmlActivity"
+        android:layout_below="@+id/textView"
+        android:padding="15dp"
+        android:onClick="startHtmlActivity"
+        />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="php questions"
+        android:layout_marginLeft="90dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/php_buttonText"
+        android:padding="15dp"
+        android:onClick="startPhpActivity"
+        />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="android questions"
+        android:layout_marginLeft="90dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/android_buttonText"
+        android:padding="15dp"
+        android:onClick="startAndroidActivity"
+        />
+</LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:onClick="clickExit"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
