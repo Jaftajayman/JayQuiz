@@ -11,6 +11,8 @@
     tools:context="com.example.ekasilab.jayquiz.MainActivity"
     android:background="#ABEBC6">
 
+
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,14 +25,14 @@
 
 
     <LinearLayout
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
     android:orientation="vertical"
     android:layout_marginTop="90dp"
-        android:padding="10dp"
+        android:padding="10dp">
 
-    >
         <TextView
 
             android:layout_width="wrap_content"
@@ -54,6 +56,8 @@
         android:layout_below="@+id/textView"
         android:padding="15dp"
         android:onClick="startHtmlActivity"
+        android:background="@drawable/mybuttons"
+
         />
     <Button
         android:layout_width="200dp"
@@ -64,6 +68,8 @@
         android:id="@+id/php_buttonText"
         android:padding="15dp"
         android:onClick="startPhpActivity"
+        android:background="@drawable/mybuttons"
+
         />
 
     <Button
@@ -75,6 +81,8 @@
         android:id="@+id/android_buttonText"
         android:padding="15dp"
         android:onClick="startAndroidActivity"
+        android:background="@drawable/mybuttons"
+
         />
 </LinearLayout>
 
@@ -84,5 +92,11 @@
         android:text="Exit"
         android:onClick="clickExit"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/mybuttons"
+
+        />
+
+
+
 </RelativeLayout>
