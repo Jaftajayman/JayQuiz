@@ -1,12 +1,13 @@
 package com.example.ekasilab.jayquiz;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class android extends AppCompatActivity {
     //RadioButton rbtrue,rbfalse;
@@ -38,6 +39,7 @@ public class android extends AppCompatActivity {
         rgFive = (RadioGroup) findViewById(R.id.radioGroup5);
 
         rgOne.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
             @Override
 
 
@@ -50,11 +52,10 @@ public class android extends AppCompatActivity {
                     //do work when radioButton2 is active
                     score = 0;
                 }
-            }
 
-            {
 
             }
+
         });
 
 
@@ -73,9 +74,7 @@ public class android extends AppCompatActivity {
                     score2 = 1;
                 }
 
-            }
 
-            {
 
             }
         });
@@ -95,8 +94,7 @@ public class android extends AppCompatActivity {
                     score3 = 0;
                 }
 
-            }
-            {
+
             }
         });
 
@@ -115,8 +113,7 @@ public class android extends AppCompatActivity {
                 }
 
             }
-            {
-            }
+
         });
 
         rgFive.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -134,29 +131,39 @@ public class android extends AppCompatActivity {
                 }
 
             }
-            {
-            }
+
         });
     }
 
 
     public void onClick(View view) {
 
+        EditText text = (EditText)findViewById(R.id.name_text);
+        String name = text.getText().toString();
 
+        // validating edit-text
+
+        if (name.matches("")) {
+            Toast.makeText(this, "You did not enter a name", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
         totalScore = score + score2 + score3 + score4 + score5;
 
         if (totalScore < 3) {
-            tvDisplay.setText(" " + totalScore + " Sorry study HTML again ");
+            tvDisplay.setText( "Candidate Name :" + name  +  "\n\n" +"Your total score :" +totalScore +"\n\nRemarks  :" + " Sorry study HTML again ");
         } else if(totalScore==3){
 
-            tvDisplay.setText("" + totalScore + " Work harder, you can do it!!!");
+            tvDisplay.setText( "Candidate  :"+ name  +  "\n" +"Your total score  : " + totalScore + "\n\nRemarks  :" + " Work harder, you can do it!!!"  );
         }
         else {
-            tvDisplay.setText("" + totalScore + " Good work!!!");
+            tvDisplay.setText( "Candidate  :"+name  +  "\n" + "Your total score  :" +totalScore + "\n\nRemarks  :" + "  Good work!!!" );
         }
+
+
     }
+
 
 
 

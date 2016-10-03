@@ -1,12 +1,13 @@
 package com.example.ekasilab.jayquiz;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class php extends AppCompatActivity {
     //RadioButton rbtrue,rbfalse;
@@ -52,9 +53,7 @@ public class php extends AppCompatActivity {
                 }
             }
 
-            {
 
-            }
         });
 
 
@@ -75,9 +74,7 @@ public class php extends AppCompatActivity {
 
             }
 
-            {
 
-            }
         });
 
 
@@ -96,8 +93,7 @@ public class php extends AppCompatActivity {
                 }
 
             }
-            {
-            }
+
         });
 
         rgfour.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -115,8 +111,7 @@ public class php extends AppCompatActivity {
                 }
 
             }
-            {
-            }
+
         });
 
         rgFive.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -134,33 +129,40 @@ public class php extends AppCompatActivity {
                 }
 
             }
-            {
-            }
+
         });
     }
 
 
     public void onClick(View view) {
 
+        totalScore = score + score2 + score3 + score4 + score5;
 
+
+
+        EditText text = (EditText) findViewById(R.id.name_text);
+        String name = text.getText().toString();
+
+        // validating edit-text
+
+        if (name.matches("")) {
+            Toast.makeText(this, "You did not enter a name", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
         totalScore = score + score2 + score3 + score4 + score5;
 
         if (totalScore < 3) {
-            tvDisplay.setText(" " + totalScore + " Sorry study HTML again ");
-        } else if(totalScore==3){
+            tvDisplay.setText("Candidate Name :" + name + "\n\n" + "Your total score :" + totalScore + "\n\nRemarks  :" + " Sorry study PHP again ");
+        } else if (totalScore == 3) {
 
-            tvDisplay.setText("" + totalScore + " Work harder, you can do it!!!");
+            tvDisplay.setText("Candidate  :" + name + "\n" + "Your total score  : " + totalScore + "\n\nRemarks  :" + " Work harder, you can do it!!!");
+        } else {
+            tvDisplay.setText("Candidate  :" + name + "\n" + "Your total score  :" + totalScore + "\n\nRemarks  :" + "  Good work!!!");
         }
-        else {
-            tvDisplay.setText("" + totalScore + " Good work!!!");
-        }
+
     }
-
-
-
-
     // opening main activity
     public void startMainActivity(View view){
         Intent objIntent=new Intent(php.this,MainActivity.class);

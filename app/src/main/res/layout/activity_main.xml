@@ -9,8 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.ekasilab.jayquiz.MainActivity"
-    android:background="#ABEBC6">
+    android:background="#ABEBC6"
+    android:padding="20dp">
 
+<ImageView
+android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:src="@drawable/images"
+    android:scaleType = "centerCrop"/>
 
 
     <ImageView
@@ -94,7 +100,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/mybuttons"
-
+        android:layout_marginBottom="20dp"
         />
 
 
